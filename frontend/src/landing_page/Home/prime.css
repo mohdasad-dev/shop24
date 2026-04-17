@@ -1,0 +1,192 @@
+:root {
+    --forest-deep: #0f2d1a;
+    --lime: #b5e550;
+    --white: #ffffff;
+  }
+  
+  .pm-section {
+    padding: 60px 20px;
+    background: var(--cream);
+  }
+  
+  .pm-banner {
+    background: linear-gradient(135deg, var(--forest-deep) 0%, #1a4d2e 100%);
+    border-radius: 30px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column; /* Stacked on mobile */
+    gap: 40px;
+    position: relative;
+    overflow: hidden;
+    color: var(--white);
+  }
+  
+  /* --- LEFT CONTENT --- */
+  .pm-badge {
+    color: var(--lime);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+  }
+  
+  .pm-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 42px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  
+  .pm-title span { color: var(--lime); }
+  
+  .pm-desc {
+    opacity: 0.7;
+    font-size: 15px;
+    margin-bottom: 30px;
+    max-width: 500px;
+  }
+  
+  /* Perks Grid - 2 columns on mobile, 3 on tablet */
+  .pm-perks-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 35px;
+  }
+  
+  .pm-perk {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+  }
+  
+  .pm-perk-icon {
+    background: rgba(255,255,255,0.1);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  
+  /* --- RIGHT CONTENT (PLANS) --- */
+  .pm-plans-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .pm-plan {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 15px 20px;
+    border-radius: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .pm-plan.selected {
+    background: var(--lime);
+    color: var(--forest-deep);
+    border-color: var(--lime);
+    transform: scale(1.02);
+  }
+  
+  .pm-plan-name {
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .pm-plan-popular {
+    background: var(--forest-deep);
+    color: var(--lime);
+    font-size: 9px;
+    padding: 2px 8px;
+    border-radius: 100px;
+  }
+  
+  .pm-plan-desc {
+    font-size: 12px;
+    opacity: 0.6;
+  }
+  
+  .pm-plan-price {
+    font-size: 20px;
+    font-weight: 800;
+    text-align: right;
+  }
+  
+  .pm-plan-sub {
+    font-size: 11px;
+    opacity: 0.6;
+    text-align: right;
+  }
+  
+  /* --- BUTTONS --- */
+  .pm-cta-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .pm-btn-primary {
+    background: var(--lime);
+    color: var(--forest-deep);
+    border: none;
+    padding: 14px 28px;
+    border-radius: 100px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  .pm-btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 14px 28px;
+    border-radius: 100px;
+  }
+  
+  .pm-price-note {
+    font-size: 12px;
+    opacity: 0.5;
+    margin-top: 15px;
+    text-align: center;
+  }
+  
+  /* --- MEDIA QUERIES --- */
+  
+  /* Tablet & Up (Switch to Side-by-Side) */
+  @media (min-width: 992px) {
+    .pm-banner {
+      flex-direction: row;
+      padding: 60px;
+      align-items: center;
+    }
+    
+    .pm-left { flex: 1.2; }
+    .pm-right { flex: 0.8; }
+    
+    .pm-perks-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .pm-price-note {
+      text-align: right;
+    }
+  }
+  
+  /* Mobile specific button sizing */
+  @media (max-width: 576px) {
+    .pm-btn-primary, .pm-btn-secondary {
+      width: 100%; /* Stack buttons on tiny phones */
+    }
+  }

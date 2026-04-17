@@ -1,0 +1,205 @@
+body {
+  background-color: #ffffff;
+}
+:root {
+  --green: #1a6b2f;
+  --green-dark: #145224;
+  --accent2: #f5a623;
+  --accent: #16d675;
+}
+
+.navbar-shop {
+  /* background-color: #1a6b2f !important; */
+  background-color: #275e36 !important;
+}
+
+
+
+.navbar-shop.scrolled {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.22);
+}
+
+
+.logo-text {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.logo-text span {
+  color: var(--accent);
+}
+
+.nav-link-item {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 8px 14px !important;
+  transition: background 0.2s, color 0.2s;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.nav-link-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff !important;
+}
+
+.nav-link-item.active {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.btn-cart-nav {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
+  border-radius: 10px !important;
+  color: #fff !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  padding: 0 !important;
+  transition: background 0.2s;
+}
+
+.btn-cart-nav:hover {
+  background: rgba(255, 255, 255, 0.28) !important;
+}
+
+.btn-profile-nav {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 10px !important;
+  color: #fff !important;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-profile-nav:hover {
+  background: rgba(255, 255, 255, 0.28) !important;
+  color: #fff !important;
+}
+
+.btn-order-nav {
+  background: var(--accent2) !important;
+  border: none !important;
+  border-radius: 10px !important;
+  color: #fff !important;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-order-nav:hover {
+  /* background: #d9920f !important; */
+  background: #4da253 !important;
+  transform: scale(1.04);
+}
+
+.custom-toggler {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+  border-radius: 8px !important;
+  padding: 6px 10px !important;
+}
+
+.custom-toggler:focus {
+  box-shadow: none !important;
+}
+
+.custom-toggler .bi {
+  color: #fff;
+  font-size: 20px;
+}
+
+/* Mobile drawer bg */
+/* #navDrawer { background: var(--green-dark); } */
+/* #navDrawer .nav-link-item { font-size: 15px; padding: 11px 14px !important; } */
+
+.outlet-strip {
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 13px;
+  color: #555;
+}
+
+.outlet-strip strong {
+  color: var(--green);
+}
+
+.btn-change {
+  border: 1px solid #bbb;
+  background: #fff;
+  border-radius: 6px;
+  font-size: 12px;
+  padding: 2px 10px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-change:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+
+
+
+
+/* hover */
+
+.category-card,
+.product-card {
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.category-card:hover,
+.product-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.category-img-wrapper,
+.product-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.category-img-wrapper img,
+.product-img-wrapper img {
+  transition: transform 0.5s ease;
+}
+
+.category-card:hover img,
+.product-card:hover img {
+  transform: scale(1.15);
+}
+
+/* Overlay Effect */
+.category-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.category-card:hover .category-overlay {
+  opacity: 1;
+}
+
+/* Button hover */
+.product-card button {
+  transition: all 0.3s ease;
+}
+
+.product-card:hover button {
+  transform: scale(1.08);
+}
