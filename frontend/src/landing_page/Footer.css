@@ -1,0 +1,307 @@
+/* ════════════════════════════════════════════
+   FOOTER  —  Shop24Hours
+   Breakpoints:
+     xs   < 400px
+     sm   400–599px
+     md   600–767px (Bootstrap md boundary)
+     lg   768–991px
+     xl   992–1199px
+     xxl  ≥ 1200px
+════════════════════════════════════════════ */
+
+/* ── Design Tokens ── */
+:root {
+    --ft-green:       #1a4d2e;
+    --ft-green-dark:  #0f2d1a;
+    --ft-green-mid:   #196b2f;
+    --ft-lime:        #b5e550;
+    --ft-yellow:      #f5c518;
+    --ft-dark:        #111a14;
+    --ft-black:       #0a0a0a;
+    --ft-white:       #ffffff;
+    --ft-muted:       rgba(255, 255, 255, 0.55);
+    --ft-border:      rgba(255, 255, 255, 0.08);
+    --ft-font-h:      'Bebas Neue', 'Syne', sans-serif;
+    --ft-font-b:      'DM Sans', sans-serif;
+  }
+  
+  /* ════════════
+     TOP BANNER
+  ════════════ */
+  .s24-footer-top {
+    background: linear-gradient(135deg, var(--ft-green) 0%, #254525 60%, var(--ft-green-dark) 100%);
+    padding: 56px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .s24-footer-top::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 80% 50%, rgba(181,229,80,.10) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  
+  /* Brand */
+  .s24-footer-brand {
+    font-family: var(--ft-font-h);
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 900;
+    color: var(--ft-white);
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    line-height: 1;
+  }
+  .s24-footer-brand span { color: var(--ft-yellow); }
+  
+  .s24-footer-tagline {
+    color: var(--ft-muted);
+    font-size: clamp(13px, 2vw, 15px);
+    line-height: 1.7;
+    max-width: 420px;
+    margin-bottom: 20px;
+  }
+  
+  /* Social links */
+  .s24-socials {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .s24-social-link {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--ft-white);
+    font-size: 17px;
+    display: grid; place-items: center;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s, border-color 0.2s;
+  }
+  .s24-social-link:hover {
+    background: var(--ft-lime);
+    color: var(--ft-green-dark);
+    border-color: var(--ft-lime);
+    transform: translateY(-2px);
+  }
+  
+  /* Newsletter */
+  .s24-newsletter-box {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 18px;
+    padding: 28px 24px;
+    backdrop-filter: blur(8px);
+  }
+  .s24-newsletter-title {
+    font-family: var(--ft-font-h);
+    font-size: clamp(16px, 3vw, 20px);
+    font-weight: 700;
+    color: var(--ft-white);
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .s24-newsletter-sub {
+    color: var(--ft-muted);
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+  
+  /* Subscribe row */
+  .s24-subscribe-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .s24-email-input {
+    flex: 1 1 180px;           /* grow, shrink, min 180px */
+    min-width: 0;              /* prevent overflow */
+    padding: 11px 16px;
+    border-radius: 10px !important;
+    border: 1.5px solid rgba(255,255,255,0.2) !important;
+    background: rgba(255,255,255,0.08) !important;
+    color: var(--ft-white) !important;
+    font-size: 14px;
+    outline: none !important;
+    transition: border-color 0.2s !important;
+  }
+  .s24-email-input::placeholder { color: rgba(255,255,255,0.35); }
+  .s24-email-input:focus {
+    border-color: var(--ft-lime) !important;
+    box-shadow: none !important;
+    background: rgba(255,255,255,0.12) !important;
+  }
+  
+  .s24-subscribe-btn {
+    flex-shrink: 0;
+    background: var(--ft-lime) !important;
+    border: none !important;
+    color: var(--ft-green-dark) !important;
+    font-weight: 700 !important;
+    font-size: 14px;
+    padding: 11px 22px;
+    border-radius: 10px !important;
+    white-space: nowrap;
+    transition: filter 0.2s, transform 0.2s !important;
+  }
+  .s24-subscribe-btn:hover:not(:disabled) {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+  }
+  .s24-subscribe-btn:disabled {
+    background: rgba(181,229,80,0.7) !important;
+    cursor: default;
+  }
+  
+  /* ════════════
+     FOOTER LINKS
+  ════════════ */
+  .s24-footer-links {
+    background: #131f14;
+    padding: 52px 0 44px;
+    border-top: 1px solid var(--ft-border);
+  }
+  
+  .s24-footer-col-title {
+    font-family: var(--ft-font-h);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ft-lime);
+    margin-bottom: 16px;
+  }
+  
+  .s24-footer-list {
+    list-style: none;
+    padding: 0; margin: 0;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .s24-footer-list a {
+    color: var(--ft-muted);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+    display: inline-block;
+  }
+  .s24-footer-list a:hover { color: var(--ft-white); }
+  
+  /* Contact column */
+  .s24-footer-contact li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--ft-muted);
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+  .s24-footer-contact li i {
+    color: var(--ft-lime);
+    font-size: 15px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .s24-footer-contact li span { word-break: break-word; }
+  
+  /* ═══════════
+     BOTTOM BAR
+  ═══════════ */
+  .s24-footer-bottom {
+    background: var(--ft-black);
+    padding: 16px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .s24-footer-bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    color: rgba(255,255,255,0.35);
+    font-size: 12px;
+  }
+  .s24-footer-bottom-right { color: rgba(255,255,255,0.25); }
+  .s24-heart { color: #e84545; }
+  
+  /* ════════════════════════════════════════════
+     RESPONSIVE BREAKPOINTS
+  ════════════════════════════════════════════ */
+  
+  /* ── Large Desktop (≥1400px) ── */
+  @media (min-width: 1400px) {
+    .s24-footer-top   { padding: 72px 0; }
+    .s24-footer-links { padding: 64px 0 56px; }
+    .s24-newsletter-box { padding: 36px 32px; }
+  }
+  
+  /* ── Tablet Landscape / Small Desktop (768–1199px) ── */
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .s24-footer-top   { padding: 48px 0; }
+    .s24-footer-links { padding: 44px 0 36px; }
+    .s24-newsletter-box { padding: 24px 20px; }
+  }
+  
+  /* ── Tablet Portrait (600–767px) ── */
+  @media (min-width: 600px) and (max-width: 767px) {
+    .s24-footer-top   { padding: 44px 0; }
+    .s24-footer-links { padding: 40px 0 32px; }
+  
+    .s24-footer-tagline { max-width: 100%; }
+  
+    /* 2-col link grid: each col xs=6 (set in JSX), looks right on tablet */
+    .s24-footer-col-title { font-size: 12px; }
+    .s24-footer-list a    { font-size: 13px; }
+    .s24-footer-contact li { font-size: 13px; }
+  }
+  
+  /* ── Mobile (< 600px) ── */
+  @media (max-width: 599px) {
+    .s24-footer-top   { padding: 36px 0; }
+    .s24-footer-links { padding: 36px 0 28px; }
+  
+    .s24-footer-brand   { font-size: 28px; }
+    .s24-footer-tagline { font-size: 13px; max-width: 100%; }
+  
+    .s24-social-link { width: 38px; height: 38px; font-size: 15px; }
+  
+    /* Newsletter box flush on mobile */
+    .s24-newsletter-box {
+      padding: 20px 16px;
+      border-radius: 14px;
+    }
+    .s24-newsletter-title { font-size: 16px; }
+  
+    /* Stack input + button vertically on narrow phones */
+    .s24-subscribe-row { flex-direction: column; }
+    .s24-email-input   { flex: none; width: 100%; }
+    .s24-subscribe-btn { width: 100%; justify-content: center; padding: 12px; }
+  
+    /* Link columns — 2-up (xs=6 set in JSX) */
+    .s24-footer-col-title { font-size: 11.5px; margin-bottom: 12px; }
+    .s24-footer-list      { gap: 8px; }
+    .s24-footer-list a    { font-size: 13px; }
+    .s24-footer-contact li { font-size: 12.5px; gap: 7px; }
+  
+    /* Bottom bar stacks on very narrow screens */
+    .s24-footer-bottom-inner { justify-content: center; text-align: center; }
+    .s24-footer-bottom-right { display: none; }
+  }
+  
+  /* ── Small Mobile (< 400px) ── */
+  @media (max-width: 399px) {
+    .s24-footer-top   { padding: 28px 0; }
+    .s24-footer-links { padding: 28px 0 24px; }
+  
+    .s24-footer-brand   { font-size: 24px; }
+    .s24-newsletter-box { padding: 16px 14px; border-radius: 12px; }
+    .s24-newsletter-title { font-size: 14px; }
+    .s24-newsletter-sub   { font-size: 12px; }
+  
+    .s24-email-input    { font-size: 13px; padding: 10px 12px; }
+    .s24-subscribe-btn  { font-size: 13px; padding: 10px; }
+  
+    .s24-footer-col-title { font-size: 11px; margin-bottom: 10px; }
+    .s24-footer-list a    { font-size: 12px; }
+    .s24-footer-contact li { font-size: 12px; }
+    .s24-social-link    { width: 34px; height: 34px; font-size: 14px; border-radius: 8px; }
+  }

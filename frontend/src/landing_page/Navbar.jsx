@@ -1,122 +1,175 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
+import './Navbar.css';
 
 const NAV_LINKS = [
-  { label: 'Home', path: '/' },
-  { label: 'Store Locator', path: '/store-locator' },
-  { label: 'Franchise Enquiry', path: '/franchise' },
-  { label: 'Contact Us', path: '/contact' },
+  { label: 'Home',               path: '/' },
+  { label: 'Store Locator',      path: '/store-locator' },
+  { label: 'Franchise Enquiry',  path: '/franchise' },
+  { label: 'Contact Us',         path: '/contact' },
 ];
 
-
 function Navbar() {
-  const [activeLink, setActiveLink] = useState('Home');
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled,   setScrolled]   = useState(false);
+  const [menuOpen,   setMenuOpen]   = useState(false);
+  const drawerRef = useRef(null);
 
+  /* Scroll shadow */
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  /* Close drawer on outside click */
+  useEffect(() => {
+    const handler = (e) => {
+      if (menuOpen && drawerRef.current && !drawerRef.current.contains(e.target)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, [menuOpen]);
+
+  /* Lock body scroll when drawer is open */
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
+  /* Close drawer on route change / link click */
+  const handleLinkClick = () => setMenuOpen(false);
 
   return (
     <>
       {/* ── Navbar ── */}
-      {/* <nav  className="navbar navbar-expand-lg bg-dark navbar-dark sticky-top py-0"> */}
-      <nav className={`navbar navbar-expand-lg navbar-shop sticky-top py-0 ${scrolled ? 'scrolled' : ''}`}>
-        <div className="container-fluid px-3 px-lg-4" style={{ height: 64 }}>
+      <nav
+        className={`s24-navbar${scrolled ? ' scrolled' : ''}`}
+        ref={drawerRef}
+      >
+        <div className="s24-navbar-inner">
 
-          {/* Logo */}
-          <a className="navbar-brand d-flex align-items-center gap-2 me-4 py-0" href="#">
+          {/* ── Logo ── */}
+          <NavLink to="/" className="s24-logo" onClick={handleLinkClick}>
             <img
               src="media/images/logo.webp"
-              alt="logo"
-              className="d-block py-1"
-              height="52"
+              alt="Shop24Hours logo"
+              className="s24-logo-img"
             />
-            <span className="logo-text">Shop<span>24</span>Hours</span>
-          </a>
+            <span className="s24-logo-text">
+              Shop<span>24</span>Hour
+            </span>
+          </NavLink>
 
-          {/* Mobile: cart + toggler */}
-          <div className="d-flex align-items-center gap-2 d-lg-none ms-auto">
-            <button className="btn btn-cart-nav position-relative">
-              <i className="bi bi-cart3" />
-              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style={{ fontSize: 9 }}>
-                0
-              </span>
-            </button>
-            <button
-              className="navbar-toggler custom-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navDrawer"
-              aria-controls="navDrawer"
-              aria-expanded="false"
-            >
-              <i className="bi bi-list" />
-            </button>
-          </div>
-
-          {/* Collapsible */}
-          <div className="collapse navbar-collapse" id="navDrawer">
-
-            {/* Desktop links */}
-
-            <ul className="navbar-nav me-auto gap-2 d-none d-lg-flex ms-auto">
-              {NAV_LINKS.map(link => (
-                <li className="nav-item" key={link.label}>
-                  <NavLink
-                    to={link.path}
-                    className={({ isActive }) =>
-                      `nav-link nav-link-item ${isActive ? 'active' : ''}`
-                    }
-                  >
-                    {link.label}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
-
-            {/* Mobile links */}
-
-            <div className="d-lg-none py-2 px-1">
-              {NAV_LINKS.map(link => (
+          {/* ── Desktop Links ── */}
+          
+          <ul className="s24-nav-links">
+            {NAV_LINKS.map(link => (
+              <li key={link.label}>
                 <NavLink
-                  key={link.label}
                   to={link.path}
-                  className={({ isActive }) =>  
-                    `nav-link nav-link-item d-block ${isActive ? 'active' : ''}`
+                  className={({ isActive }) =>
+                    `s24-nav-link${isActive ? ' active' : ''}`
                   }
                 >
                   {link.label}
                 </NavLink>
-              ))}
-            </div>
+              </li>
+            ))}
+          </ul>
 
-            {/* Desktop right actions */}
-            <div className="d-none d-lg-flex align-items-center gap-2">
-              <button className="btn btn-cart-nav position-relative">
-                {/* <i className="bi bi-cart3" /> */}
-                <i class="fa-solid fa-cart-arrow-down"></i>
-                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style={{ fontSize: 9 }}>
-                  0
-                </span>
-              </button>
-              <button className="btn btn-profile-nav px-3 py-2">
-                <i className="bi bi-person-circle me-1" />Profile
-              </button>
-              <button className="btn btn-order-nav px-3 py-2 bg-black">
-                Order Now <i className="bi bi-arrow-right" />
-              </button>
-            </div>
-
+          {/* ── Desktop Actions ── */}
+          <div className="s24-nav-actions">
+            <button className="s24-btn-cart" aria-label="Cart">
+              {/* <i className="fa-solid fa-cart-arrow-down" /> */}
+              <i class="fa-solid fa-cart-arrow-down"></i>
+              <span className="s24-cart-badge">0</span>
+            </button>
+            <button className="s24-btn-profile">
+              <i className="bi bi-person-circle" /> Profile
+            </button>
+            <button className="s24-btn-order">
+              Order Now <i className="bi bi-arrow-right" />
+            </button>
           </div>
+
+          {/* ── Mobile: cart + hamburger ── */}
+          <div className="s24-mobile-bar">
+            <button className="s24-btn-cart" aria-label="Cart">
+              {/* <i className="bi bi-cart3" /> */}
+              <i className="fa-solid fa-cart-shopping"></i>
+              <span className="s24-cart-badge">0</span>
+            </button>
+            <button
+              className={`s24-hamburger${menuOpen ? ' open' : ''}`}
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen(v => !v)}
+            >
+              <span /><span /><span />
+            </button>
+          </div>
+
         </div>
       </nav>
 
+      {/* ── Mobile Drawer Overlay ── */}
+      <div
+        className={`s24-drawer-overlay${menuOpen ? ' visible' : ''}`}
+        onClick={() => setMenuOpen(false)}
+        aria-hidden="true"
+      />
+
+      {/* ── Mobile Drawer ── */}
+      <div className={`s24-drawer${menuOpen ? ' open' : ''}`} aria-hidden={!menuOpen}>
+
+        {/* Drawer header */}
+        <div className="s24-drawer-hdr">
+          <NavLink to="/" className="s24-logo" onClick={handleLinkClick}>
+            <img src="media/images/logo.webp" alt="Shop24Hours logo" className="s24-logo-img" />
+            <span className="s24-logo-text">Shop<span>24</span>Hours</span>
+          </NavLink>
+          <button
+            className="s24-drawer-close"
+            aria-label="Close menu"
+            onClick={() => setMenuOpen(false)}
+          >
+            {/* <i className="bi bi-x-lg" /> */}
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        {/* Drawer nav links */}
+        <nav className="s24-drawer-nav">
+          {NAV_LINKS.map(link => (
+            <NavLink
+              key={link.label}
+              to={link.path}
+              className={({ isActive }) =>
+                `s24-drawer-link${isActive ? ' active' : ''}`
+              }
+              onClick={handleLinkClick}
+            >
+              {link.label}
+              <i className="bi bi-chevron-right s24-drawer-arrow" />
+            </NavLink>
+          ))}
+        </nav>
+
+        {/* Drawer footer actions */}
+        <div className="s24-drawer-footer">
+          <button className="s24-btn-profile s24-drawer-btn-profile">
+            <i className="bi bi-person-circle" /> My Profile
+          </button>
+          <button className="s24-btn-order s24-drawer-btn-order">
+            Order Now <i className="bi bi-arrow-right" />
+          </button>
+        </div>
+
+      </div>
     </>
   );
 }
 
 export default Navbar;
-

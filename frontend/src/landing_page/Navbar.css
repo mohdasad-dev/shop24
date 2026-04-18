@@ -1,0 +1,568 @@
+/* ════════════════════════════════════════════
+   NAVBAR  —  Shop24Hours
+   Breakpoints:
+     xs   < 400px   (tiny phones)
+     sm   400–599px (phones)
+     md   600–899px (tablets)
+     lg   900–1199px (laptop)
+     xl   ≥ 1200px  (desktop / monitor)
+════════════════════════════════════════════ */
+
+/* ── Design Tokens ── */
+:root {
+    --nb-bg: rgba(15, 45, 26, 0.96);
+    --nb-bg-solid: #0f2d1a;
+    --nb-border: rgba(181, 229, 80, 0.12);
+    --nb-lime: #b5e550;
+    --nb-lime-dim: rgba(181, 229, 80, 0.18);
+    --nb-white: #ffffff;
+    --nb-muted: rgba(255, 255, 255, 0.55);
+    --nb-h: 64px;
+    /* navbar height desktop */
+    --nb-h-sm: 58px;
+    /* navbar height mobile */
+    --nb-font-h: 'Bebas Neue', 'Syne', sans-serif;
+    --nb-font-b: 'DM Sans', sans-serif;
+    --nb-shadow: 0 4px 24px rgba(0, 0, 0, 0.22);
+    --nb-drawer-w: 300px;
+    --nb-transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── NAVBAR BASE ── */
+.s24-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
+    background: var(--nb-bg);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--nb-border);
+    transition: box-shadow var(--nb-transition), background var(--nb-transition);
+}
+
+.s24-navbar.scrolled {
+    box-shadow: var(--nb-shadow);
+    background: var(--nb-bg-solid);
+}
+
+/* ── INNER WRAPPER ── */
+.s24-navbar-inner {
+    display: flex;
+    align-items: center;
+    height: var(--nb-h);
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    gap: 28px;
+}
+
+/* ── LOGO ── */
+.s24-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.s24-logo-img {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.s24-logo-text {
+    font-family: var(--nb-font-h);
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    color: var(--nb-white);
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.s24-logo-text span {
+    color: var(--nb-lime);
+}
+
+/* ── DESKTOP NAV LINKS ── */
+.s24-nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 4px;
+    flex: 1;
+}
+
+.s24-nav-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-family: var(--nb-font-b);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--nb-muted);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color var(--nb-transition), background var(--nb-transition);
+}
+
+.s24-nav-link:hover {
+    color: var(--nb-white);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.s24-nav-link.active {
+    color: var(--nb-lime);
+    background: var(--nb-lime-dim);
+}
+
+/* ── DESKTOP ACTION BUTTONS ── */
+.s24-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+/* Cart button (shared desktop + mobile) */
+.s24-btn-cart {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: transparent;
+    border: none;
+    color: var(--nb-white);
+    font-size: 17px;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: background var(--nb-transition);
+    flex-shrink: 0;
+}
+
+.s24-btn-cart:hover {
+    background: rgba(255, 255, 255, 0.10);
+}
+
+
+
+.s24-cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #e84545;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    min-width: 16px;
+    height: 16px;
+    border-radius: 20px;
+    display: grid;
+    place-items: center;
+    padding: 0 3px;
+    border: 1.5px solid var(--nb-bg-solid);
+}
+
+/* Profile button */
+.s24-btn-profile {
+    padding: 8px 16px;
+    border-radius: 10px;
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    color: var(--nb-white);
+    font-family: var(--nb-font-b);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    transition: border-color var(--nb-transition), background var(--nb-transition);
+}
+
+.s24-btn-profile:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* Order Now button */
+.s24-btn-order {
+    padding: 9px 18px;
+    border-radius: 10px;
+    background: var(--nb-lime);
+    border: none;
+    color: #0f2d1a;
+    font-family: var(--nb-font-b);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    transition: filter var(--nb-transition), transform var(--nb-transition);
+}
+
+.s24-btn-order:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+/* ── MOBILE BAR (cart + hamburger) ── */
+.s24-mobile-bar {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+/* ── HAMBURGER ── */
+.s24-hamburger {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0;
+    transition: background var(--nb-transition);
+}
+
+.s24-hamburger:hover {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.s24-hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--nb-white);
+    border-radius: 2px;
+    transition: transform var(--nb-transition), opacity var(--nb-transition), width var(--nb-transition);
+}
+
+/* Animated X when open */
+.s24-hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.s24-hamburger.open span:nth-child(2) {
+    opacity: 0;
+    width: 0;
+}
+
+.s24-hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── DRAWER OVERLAY ── */
+.s24-drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1200;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--nb-transition);
+    backdrop-filter: blur(2px);
+}
+
+.s24-drawer-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ── MOBILE DRAWER ── */
+.s24-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: var(--nb-drawer-w);
+    max-width: 88vw;
+    height: 100dvh;
+    /* dynamic viewport for mobile browsers */
+    background: var(--nb-bg-solid);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 1300;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform var(--nb-transition);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.s24-drawer.open {
+    transform: translateX(0);
+}
+
+/* Drawer header */
+.s24-drawer-hdr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    flex-shrink: 0;
+}
+
+.s24-drawer-close {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    color: var(--nb-white);
+    font-size: 15px;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: background var(--nb-transition);
+}
+
+.s24-drawer-close:hover {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+/* Drawer nav links */
+.s24-drawer-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0;
+    flex: 1;
+}
+
+.s24-drawer-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 22px;
+    font-family: var(--nb-font-b);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--nb-muted);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: color var(--nb-transition), background var(--nb-transition), border-color var(--nb-transition);
+}
+
+.s24-drawer-link:hover {
+    color: var(--nb-white);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.s24-drawer-link.active {
+    color: var(--nb-lime);
+    background: var(--nb-lime-dim);
+    border-left-color: var(--nb-lime);
+}
+
+.s24-drawer-arrow {
+    font-size: 11px;
+    opacity: 0.4;
+    transition: opacity var(--nb-transition);
+}
+
+.s24-drawer-link:hover .s24-drawer-arrow,
+.s24-drawer-link.active .s24-drawer-arrow {
+    opacity: 0.8;
+}
+
+/* Drawer footer */
+.s24-drawer-footer {
+    padding: 16px 20px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.s24-drawer-btn-profile {
+    width: 100%;
+    justify-content: center;
+    padding: 11px 16px;
+    font-size: 14px;
+}
+
+.s24-drawer-btn-order {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 16px;
+    font-size: 14px;
+}
+.s24-nav-links{
+    margin-left: 200px;
+}
+
+/* ════════════════════════════════════════════
+     RESPONSIVE BREAKPOINTS
+  ════════════════════════════════════════════ */
+
+/* ── Large Desktop (≥1400px) ── */
+@media (min-width: 1400px) {
+    .s24-navbar-inner {
+        padding: 0 64px;
+        gap: 36px;
+    }
+
+    .s24-logo-text {
+        font-size: 22px;
+    }
+
+    .s24-nav-link {
+        font-size: 15px;
+        padding: 8px 16px;
+    }
+
+    .s24-btn-order,
+    .s24-btn-profile {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+/* ── Standard Desktop (1200–1399px) ── */
+/* default styles apply */
+
+/* ── Laptop (900–1199px) ── */
+@media (min-width: 900px) and (max-width: 1199px) {
+    .s24-navbar-inner {
+        padding: 0 28px;
+        gap: 16px;
+    }
+
+    .s24-nav-link {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    .s24-logo-text {
+        font-size: 18px;
+    }
+
+    .s24-btn-profile {
+        display: none;
+    }
+
+    /* hide profile, keep order+cart */
+    .s24-btn-order {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+}
+
+/* ── Tablet + Mobile: switch to drawer (< 900px) ── */
+@media (max-width: 899px) {
+    .s24-navbar-inner {
+        height: var(--nb-h-sm);
+        padding: 0 20px;
+        gap: 0;
+    }
+
+    /* Hide desktop links and desktop actions */
+    .s24-nav-links {
+        display: none;
+    }
+
+    .s24-nav-actions {
+        display: none;
+    }
+
+    /* Show mobile bar */
+    .s24-mobile-bar {
+        display: flex;
+    }
+
+    .s24-logo-img {
+        height: 38px;
+    }
+
+    .s24-logo-text {
+        font-size: 17px;
+    }
+}
+
+/* ── Tablet Portrait (600–899px) ── */
+@media (min-width: 600px) and (max-width: 899px) {
+    .s24-navbar-inner {
+        padding: 0 28px;
+    }
+
+    .s24-logo-text {
+        font-size: 18px;
+    }
+
+    .s24-logo-img {
+        height: 40px;
+    }
+
+    /* --nb-drawer-w: 340px; */
+}
+
+/* ── Mobile (400–599px) ── */
+@media (max-width: 599px) {
+    .s24-navbar-inner {
+        padding: 0 16px;
+    }
+
+    .s24-logo-text {
+        font-size: 16px;
+    }
+
+    .s24-logo-img {
+        height: 36px;
+    }
+}
+
+/* ── Small Mobile (< 400px) ── */
+@media (max-width: 399px) {
+    .s24-navbar-inner {
+        padding: 0 12px;
+    }
+
+    .s24-logo-text {
+        display: none;
+    }
+
+    /* logo image only on tiny phones */
+    .s24-logo-img {
+        height: 34px;
+    }
+
+    .s24-btn-cart {
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+    }
+
+    .s24-hamburger {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* ── Ensure body accounts for fixed navbar ── */
+body {
+    padding-top: var(--nb-h);
+}
+
+@media (max-width: 899px) {
+    body {
+        padding-top: var(--nb-h-sm);
+    }
+}

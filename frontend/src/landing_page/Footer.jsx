@@ -1,7 +1,6 @@
-
-
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import "./Footer.css";
 
 function Footer() {
   const [email, setEmail] = useState("");
@@ -15,56 +14,86 @@ function Footer() {
     }
   };
 
+  const handleKey = (e) => {
+    if (e.key === "Enter") handleSubscribe();
+  };
+
   return (
-    <footer>
+    <footer className="s24-footer">
 
-      {/* Top Banner */}
-      <div className="bg-success text-white py-5">
+      {/* ── Top Banner ── */}
+      <div className="s24-footer-top">
         <Container>
-          <Row className="align-items-center">
+          <Row className="align-items-center gy-4">
 
-            <Col lg={6}>
-              <h2 className="fw-bold">
-                Shop<span className="text-warning">24</span>Hours
+            {/* Left — Brand + Socials */}
+            <Col xs={12} lg={6}>
+              <h2 className="s24-footer-brand">
+                Shop<span>24</span>Hours
               </h2>
-
-              <p className="text-light">
+              <p className="s24-footer-tagline">
                 Trusted food brands, snacks, beverages, and essentials —
                 always fresh, always ready, 24×7.
               </p>
-
-              <div className="d-flex gap-3 mt-3">
-                <a href="https://www.facebook.com/shop24hoursindia" className="text-white fs-5"><i className="bi bi-facebook"></i></a>
-                <a href="https://www.instagram.com/shop24hours.india/" className="text-white fs-5"><i className="bi bi-instagram"></i></a>
-                <a href="https://wa.me/919810377247" target="_blank" rel="noopener noreferrer" className="text-white fs-5"> <i className="bi bi-whatsapp"></i> </a>
-               
-              </div>
-            </Col>
-
-            <Col lg={6}>
-              <h5 className="fw-bold">
-                Get Exclusive Deals in Your Inbox
-              </h5>
-
-              <p className="text-light small">
-                Subscribe for weekly offers and new arrivals.
-              </p>
-
-              <div className="d-flex">
-                <Form.Control
-                  type="email"
-                  placeholder="Enter email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-
-                <Button
-                  variant="warning"
-                  className="ms-2"
-                  onClick={handleSubscribe}
+              <div className="s24-socials">
+                <a
+                  href="https://www.facebook.com/shop24hoursindia"
+                  className="s24-social-link"
+                  aria-label="Facebook"
+                  target="_blank" rel="noopener noreferrer"
                 >
-                  {subscribed ? "Subscribed" : "Subscribe"}
-                </Button>
+                  <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/shop24hours.india/"
+                  className="s24-social-link"
+                  aria-label="Instagram"
+                  target="_blank" rel="noopener noreferrer"
+                >
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a
+                  href="https://wa.me/919810377247"
+                  className="s24-social-link"
+                  aria-label="WhatsApp"
+                  target="_blank" rel="noopener noreferrer"
+                >
+                  <i class="fa-brands fa-whatsapp"></i>
+                </a>
+              </div>
+            </Col>
+
+            {/* Right — Newsletter */}
+            <Col xs={12} lg={6}>
+              <div className="s24-newsletter-box">
+                <h5 className="s24-newsletter-title">
+                  Get Exclusive Deals in Your Inbox
+                </h5>
+                <p className="s24-newsletter-sub">
+                  Subscribe for weekly offers and new arrivals.
+                </p>
+                <div className="s24-subscribe-row">
+                  <Form.Control
+                    type="email"
+                    placeholder="Enter your email address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    onKeyDown={handleKey}
+                    className="s24-email-input"
+                    aria-label="Email address"
+                  />
+                  <Button
+                    className="s24-subscribe-btn"
+                    onClick={handleSubscribe}
+                    disabled={subscribed}
+                  >
+                    {subscribed ? (
+                      <><i className="bi bi-check-lg me-1" /> Subscribed!</>
+                    ) : (
+                      "Subscribe"
+                    )}
+                  </Button>
+                </div>
               </div>
             </Col>
 
@@ -72,51 +101,77 @@ function Footer() {
         </Container>
       </div>
 
-      {/* Footer Links */}
-      <div className="bg-dark text-white py-5">
+      {/* ── Footer Links ── */}
+      <div className="s24-footer-links">
         <Container>
-          <Row>
+          <Row className="gy-4">
 
-            <Col md={3}>
-              <h6 className="fw-bold mb-3">Quick Links</h6>
-              <p>Home</p>
-              <p>Store Locator</p>
-              <p>Our Story</p>
-              <p>Contact Us</p>
+            {/* Quick Links */}
+            <Col xs={6} sm={6} md={3}>
+              <h6 className="s24-footer-col-title">Quick Links</h6>
+              <ul className="s24-footer-list">
+                {["Home", "Store Locator", "Our Story", "Contact Us"].map(l => (
+                  <li key={l}><a href="#">{l}</a></li>
+                ))}
+              </ul>
             </Col>
 
-            <Col md={3}>
-              <h6 className="fw-bold mb-3">Our Menu</h6>
-              <p>Burger</p>
-              <p>Momos</p>
-              <p>Biryani</p>
-              <p>Dessert</p>
+            {/* Our Menu */}
+            <Col xs={6} sm={6} md={3}>
+              <h6 className="s24-footer-col-title">Our Menu</h6>
+              <ul className="s24-footer-list">
+                {["Burger", "Momos", "Biryani", "Dessert"].map(l => (
+                  <li key={l}><a href="#">{l}</a></li>
+                ))}
+              </ul>
             </Col>
 
-            <Col md={3}>
-              <h6 className="fw-bold mb-3">Policies</h6>
-              <p>Privacy Policy</p>
-              <p>Terms & Conditions</p>
-              <p>Refund Policy</p>
+            {/* Policies */}
+            <Col xs={6} sm={6} md={3}>
+              <h6 className="s24-footer-col-title">Policies</h6>
+              <ul className="s24-footer-list">
+                {["Privacy Policy", "Terms & Conditions", "Refund Policy"].map(l => (
+                  <li key={l}><a href="#">{l}</a></li>
+                ))}
+              </ul>
             </Col>
 
-            <Col md={3}>
-              <h6 className="fw-bold mb-3">Contact</h6>
-              <p><i className="bi bi-telephone"></i> +91 9810377247 or 120-3222012.</p>
-              <p><i className="bi bi-envelope"></i> divyamaan@shop24hours.com</p>
-              <p><i className="bi bi-geo-alt"></i> Noida</p>
+            {/* Contact */}
+            <Col xs={6} sm={6} md={3}>
+              <h6 className="s24-footer-col-title">Contact</h6>
+              <ul className="s24-footer-list s24-footer-contact">
+                <li>
+                  <i className="bi bi-telephone-fill" />
+                  <span>+91 9810377247<br />120-3222012</span>
+                </li>
+                <li>
+                  <i className="bi bi-envelope-fill" />
+                  <span>divyamaan@shop24hours.com</span>
+                </li>
+                <li>
+                  <i className="bi bi-geo-alt-fill" />
+                  <span>Noida, India</span>
+                </li>
+              </ul>
             </Col>
 
           </Row>
         </Container>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="bg-black text-center text-light py-3">
+      {/* ── Bottom Bar ── */}
+      <div className="s24-footer-bottom">
         <Container>
-          <small>
-            © {new Date().getFullYear()} Shop24Hours. All rights reserved.
-          </small>
+          <div className="s24-footer-bottom-inner">
+            <small>© {new Date().getFullYear()} Shop24Hours. All rights reserved.</small>
+            <small className="s24-footer-bottom-right">
+              Powered by 
+              <a href="https://www.idelyze.com/" target="_blank" rel="noopener noreferrer"> Idelyze</a>
+            </small>
+            <small className="s24-footer-bottom-right">
+              Made with <span className="s24-heart">♥</span> in India
+            </small>
+          </div>
         </Container>
       </div>
 
@@ -125,4 +180,3 @@ function Footer() {
 }
 
 export default Footer;
-

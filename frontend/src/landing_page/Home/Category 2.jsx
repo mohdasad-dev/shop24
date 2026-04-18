@@ -1,208 +1,3 @@
-// import React from 'react'
-
-// function Category() {
-//     return (
-//         <h1>Category</h1>
-//     );
-// }
-
-
-
-// import React from "react";
-
-// const CATEGORIES = [
-//   {
-//     id: 1,
-//     name: "Sides",
-//     image: "/media/images/sides.webp",
-//     badge: null,
-//   },
-//   {
-//     id: 2,
-//     name: "Dessert",
-//     image: "/media/images/dessert.webp",
-//     badge: null,
-//   },
-//   {
-//     id: 3,
-//     name: "Super Saver Trio",
-//     image: "/media/images/super-saver.webp",
-//     badge: null,
-//   },
-//   {
-//     id: 4,
-//     name: "International Menu",
-//     image: "/media/images/international.webp",
-//     badge: { text: "JUST LAUNCHED", color: "#2e7d32" },
-//   },
-//   {
-//     id: 5,
-//     name: "Signature Flavours",
-//     image: "/media/images/signature.webp",
-//     badge: { text: "FESTIVE SPECIAL", color: "#2e7d32" },
-//   },
-//   {
-//     id: 6,
-//     name: "Season's Specials ( 4 In 1 )",
-//     image: "/media/images/seasons.webp",
-//     badge: { text: "4 IN 1", color: "#2e7d32" },
-//   },
-//   {
-//     id: 7,
-//     name: "Meals & Combos",
-//     image: "/media/images/meals.webp",
-//     badge: null,
-//   },
-//   {
-//     id: 8,
-//     name: "Combo",
-//     image: "/media/images/combo.webp",
-//     badge: null,
-//   },
-// ];
-
-// function Category() {
-//   return (
-//     <>
-//       <link
-//         rel="stylesheet"
-//         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
-//       />
-//       <style>{`
-//         :root { --green: #1a6b2f; }
-
-//         .categories-section {
-//           background-color: #dde8dc;
-//         }
-
-//         .section-title {
-//           font-size: 1.3rem;
-//           font-weight: 800;
-//           letter-spacing: 1.5px;
-//           color: #1a1a1a;
-//           text-transform: uppercase;
-//         }
-//         .section-title::before,
-//         .section-title::after {
-//           content: '';
-//           display: inline-block;
-//           width: 80px;
-//           height: 1.5px;
-//           background: #aaa;
-//           vertical-align: middle;
-//           margin: 0 14px;
-//         }
-
-//         .cat-card {
-//           background: #fff;
-//           border-radius: 16px;
-//           overflow: hidden;
-//           cursor: pointer;
-//           transition: transform .2s, box-shadow .2s;
-//           border: none;
-//         }
-//         .cat-card:hover {
-//           transform: translateY(-5px);
-//           box-shadow: 0 12px 32px rgba(0,0,0,.14) !important;
-//         }
-
-//         .cat-img-wrap {
-//           width: 100%;
-//           height: 175px;
-//           overflow: hidden;
-//           position: relative;
-//           background: #2a2a2a;
-//         }
-//         .cat-img-wrap img {
-//           width: 100%;
-//           height: 100%;
-//           object-fit: cover;
-//           display: block;
-//         }
-
-//         .cat-badge {
-//           position: absolute;
-//           top: 10px;
-//           right: 10px;
-//           background: #2e7d32;
-//           color: #fff;
-//           font-size: 10px;
-//           font-weight: 800;
-//           padding: 4px 10px;
-//           border-radius: 20px;
-//           letter-spacing: .4px;
-//           white-space: nowrap;
-//         }
-
-//         .cat-name {
-//           font-size: 14px;
-//           font-weight: 600;
-//           color: #1a1a1a;
-//           text-align: center;
-//           padding: 12px 10px;
-//         }
-
-//         .btn-view-all {
-//           background: var(--green);
-//           color: #fff;
-//           border: none;
-//           border-radius: 30px;
-//           padding: 10px 36px;
-//           font-size: 15px;
-//           font-weight: 700;
-//           transition: background .2s, transform .15s;
-//         }
-//         .btn-view-all:hover {
-//           background: #145224;
-//           color: #fff;
-//           transform: scale(1.04);
-//         }
-//       `}</style>
-
-//       <section className="categories-section py-5">
-//         <div className="container">
-
-//           {/* Section Title */}
-//           <h2 className="section-title text-center mb-4">Explore Categories</h2>
-
-//           {/* Grid */}
-//           <div className="row g-3">
-//             {CATEGORIES.map((cat) => (
-//               <div className="col-6 col-md-3" key={cat.id}>
-//                 <div className="cat-card shadow-sm">
-
-//                   {/* Image */}
-//                   <div className="cat-img-wrap">
-//                     <img src={cat.image} alt={cat.name} />
-//                     {cat.badge && (
-//                       <span className="cat-badge">{cat.badge.text}</span>
-//                     )}
-//                   </div>
-
-//                   {/* Name */}
-//                   <div className="cat-name">{cat.name}</div>
-
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-
-//           {/* View All Button */}
-//           <div className="d-flex justify-content-center mt-4">
-//             <button className="btn-view-all">View All</button>
-//           </div>
-
-//         </div>
-//       </section>
-//     </>
-//   );
-// }
-
-// export default Category;
-
-
-
-
 import React from "react";
 import { Container, Row, Col, Card, Badge, Button } from "react-bootstrap";
 
@@ -237,30 +32,6 @@ function Category() {
         {/* Categories Grid */}
         <Row className="g-3">
           {CATEGORIES.map((cat) => (
-            // <Col xs={6} md={3} key={cat.id}>
-            //   <Card className="border-0 shadow-sm h-100 text-center">
-
-            //     <div style={{ height: "300px", overflow: "hidden", position: "relative" }}>
-            //       <Card.Img
-            //         src={cat.image}
-            //         style={{ height: "100%", objectFit: "cover" }}
-            //       />
-
-            //       {cat.badge && (
-            //         <Badge bg="success" className="position-absolute top-0 end-0 m-2">
-            //           {cat.badge}
-            //         </Badge>
-            //       )}
-            //     </div>
-
-            //     <Card.Body>
-            //       <Card.Title style={{ fontSize: "14px" }}>
-            //         {cat.name}
-            //       </Card.Title>
-            //     </Card.Body>
-
-            //   </Card>
-            // </Col>
             <Col xs={6} md={3} key={cat.id}>
               <Card className="category-card border-0 shadow-sm h-100 text-center">
 
@@ -306,69 +77,35 @@ function Category() {
 
         <Row className="g-4">
           {BEST_SELLERS.map((item) => (
-            // <Col xs={6} md={3} key={item.id}>
-            //   <Card className="border-0 shadow-sm h-100">
-
-            //     <Card.Img
-            //       variant="top"
-            //       src={item.image}
-            //       style={{ height: "200px", objectFit: "cover" }}
-            //     />
-
-            //     <Card.Body>
-
-            //       <Card.Title className="small fw-semibold">
-            //         {item.name}
-            //       </Card.Title>
-
-            //       <div className="d-flex justify-content-between align-items-center">
-
-            //         <span className="fw-bold">
-            //           ₹{item.price}
-            //         </span>
-
-            //         <Button size="sm" variant="success" className="rounded-pill">
-            //           View
-            //         </Button>
-
-            //       </div>
-
-            //     </Card.Body>
-
-            //   </Card>
-            // </Col>
-
-
-
             <Col xs={6} md={3} key={item.id}>
-  <Card className="product-card border-0 shadow-sm h-100">
+              <Card className="product-card border-0 shadow-sm h-100">
 
-    <div className="product-img-wrapper">
-      <Card.Img
-        variant="top"
-        src={item.image}
-        style={{ height: "200px", objectFit: "cover" }}
-      />
-    </div>
+                <div className="product-img-wrapper">
+                  <Card.Img
+                    variant="top"
+                    src={item.image}
+                    style={{ height: "200px", objectFit: "cover" }}
+                  />
+                </div>
 
-    <Card.Body>
+                <Card.Body>
 
-      <Card.Title className="small fw-semibold">
-        {item.name}
-      </Card.Title>
+                  <Card.Title className="small fw-semibold">
+                    {item.name}
+                  </Card.Title>
 
-      <div className="d-flex justify-content-between align-items-center">
-        <span className="fw-bold">₹{item.price}</span>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <span className="fw-bold">₹{item.price}</span>
 
-        <Button size="sm" variant="success" className="rounded-pill">
-          View
-        </Button>
-      </div>
+                    <Button size="sm" variant="success" className="rounded-pill">
+                      View
+                    </Button>
+                  </div>
 
-    </Card.Body>
+                </Card.Body>
 
-  </Card>
-</Col>
+              </Card>
+            </Col>
           ))}
         </Row>
 
