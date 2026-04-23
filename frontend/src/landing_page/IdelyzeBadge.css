@@ -1,0 +1,182 @@
+/* ═══════════════════════════════
+   Idelyze Badge — Responsive
+═══════════════════════════════ */
+
+.idelyze-badge {
+    font-size: clamp(11px, 1.2vw, 13px);
+    flex-wrap: wrap;
+    row-gap: 4px;
+  }
+  
+  .idelyze-label {
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.4px;
+    font-size: inherit;
+  }
+  
+  /* Clickable badge */
+  .idelyze-link {
+    position: relative;
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(181, 229, 80, 0.08);
+    border: 1px solid rgba(181, 229, 80, 0.25);
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  /* Dot */
+  .idelyze-dot {
+    width: 6px;
+    height: 6px;
+    background: #b5e550;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(181,229,80,0.6);
+    flex-shrink: 0;
+  }
+  
+  /* Text */
+  .idelyze-name {
+    color: #b5e550;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: inherit;
+  }
+  
+  /* Hover (desktop only meaningful) */
+  .idelyze-link:hover {
+    background: #b5e550;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(181,229,80,0.25);
+  }
+  
+  .idelyze-link:hover .idelyze-name {
+    color: #0f2d1a;
+  }
+  
+  .idelyze-link:hover .idelyze-dot {
+    background: #0f2d1a;
+    box-shadow: none;
+  }
+  
+  /* Underline animation */
+  .idelyze-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: 0%;
+    height: 1px;
+    background: #b5e550;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  
+  .idelyze-link:hover::after {
+    width: 70%;
+  }
+  
+  /* ═══════════════════════════════
+     BREAKPOINTS
+  ═══════════════════════════════ */
+  
+  /* ── Tablets (≤ 768px) ── */
+  @media (max-width: 768px) {
+    .idelyze-badge {
+      justify-content: center;   /* center align in footer */
+      text-align: center;
+    }
+  
+    .idelyze-link {
+      padding: 5px 12px;
+    }
+  
+    .idelyze-dot {
+      width: 5px;
+      height: 5px;
+    }
+  }
+  
+  /* ── Mobile (≤ 576px) ── */
+  @media (max-width: 576px) {
+    .idelyze-badge {
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+  
+    .idelyze-label {
+      font-size: 11px;
+    }
+  
+    .idelyze-link {
+      width: fit-content;
+      padding: 6px 14px;
+    }
+  
+    .idelyze-name {
+      font-size: 12px;
+    }
+  
+    /* Remove hover transform (touch devices) */
+    .idelyze-link:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+  
+  /* ── Small Mobile (≤ 400px) ── */
+  @media (max-width: 400px) {
+    .idelyze-badge {
+      font-size: 10.5px;
+    }
+  
+    .idelyze-label {
+      font-size: 10px;
+    }
+  
+    .idelyze-link {
+      padding: 5px 12px;
+    }
+  
+    .idelyze-name {
+      font-size: 11px;
+    }
+  }
+
+  /* Icon styling */
+.idelyze-icon {
+    font-size: 11px;
+    color: #b5e550;
+    transition: transform 0.25s ease, color 0.25s ease;
+  }
+  
+  /* Hover: icon movement */
+  .idelyze-link:hover .idelyze-icon {
+    transform: translate(2px, -2px);
+    color: #0f2d1a;
+  }
+  
+  /* Glow pulse animation (very subtle, premium feel) */
+  @keyframes idelyze-pulse {
+    0% { box-shadow: 0 0 0 rgba(181,229,80,0.0); }
+    50% { box-shadow: 0 0 10px rgba(181,229,80,0.25); }
+    100% { box-shadow: 0 0 0 rgba(181,229,80,0.0); }
+  }
+  
+  .idelyze-link {
+    animation: idelyze-pulse 3s infinite;
+  }
+  
+  /* Stop animation on hover (feels intentional) */
+  .idelyze-link:hover {
+    animation: none;
+  }
+  
+  /* Better focus state (keyboard users) */
+  .idelyze-link:focus-visible {
+    outline: 2px solid #b5e550;
+    outline-offset: 2px;
+  }

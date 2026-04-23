@@ -57,7 +57,7 @@ function ContactCards() {
     {
       icon: "📍",
       label: "HEAD OFFICE",
-      value: "Banjara Hills, Hyderabad",
+      value: "Banjara Hills, Noida",
       sub: "Road No. 12, Hyd – 500034",
       link: "#locations",
       linkText: "View Locations →",
@@ -132,7 +132,7 @@ function MiniMap() {
       </div>
       <div className="ct-map-footer">
         <div className="ct-map-addr">
-          Banjara Hills, Hyderabad
+          Banjara Hills, Noida
           <span>Road No. 12, Hyd – 500034</span>
         </div>
         <button className="ct-map-dir" onClick={() => window.open("https://maps.google.com", "_blank")}>
@@ -190,9 +190,9 @@ function BusinessHours() {
 /* ── Social Links ── */
 function SocialLinks() {
   const socials = [
-    { icon: "f",  label: "Facebook",  color: "#1877f2", href: "#" },
-    { icon: "in", label: "Instagram", color: "#e1306c", href: "#" },
-    { icon: "wa", label: "WhatsApp",  color: "#25d366", href: "#" },
+    { icon: "f",  label: "Facebook",  color: "#1877f2", href: "https://www.facebook.com/shop24hoursindia" },
+    { icon: "in", label: "Instagram", color: "#e1306c", href: "https://www.instagram.com/shop24hours.india/" },
+    { icon: "wa", label: "WhatsApp",  color: "#25d366", href: "https://wa.me/919810377247" },
     { icon: "yt", label: "YouTube",   color: "#ff0000", href: "#" },
   ];
   return (
@@ -215,14 +215,14 @@ function SocialLinks() {
 /* ── City Locations ── */
 function Locations() {
   const cities = [
-    {
-      city: "Hyderabad",
-      icon: "🏙️",
-      count: "5 outlets",
-      addr: "Road No. 12, Banjara Hills – 500034",
-      phone: "+91 98103 77747",
-      email: "hyd@shop24hours.com",
-    },
+    // {
+    //   city: "Hyderabad",
+    //   icon: "🏙️",
+    //   count: "5 outlets",
+    //   addr: "Road No. 12, Banjara Hills – 500034",
+    //   phone: "+91 98103 77747",
+    //   email: "hyd@shop24hours.com",
+    // },
     {
       city: "Delhi",
       icon: "🕌",
@@ -231,22 +231,22 @@ function Locations() {
       phone: "+91 98765 11234",
       email: "del@shop24hours.com",
     },
-    {
-      city: "Mumbai",
-      icon: "🌊",
-      count: "2 outlets",
-      addr: "Linking Rd, Bandra West – 400050",
-      phone: "+91 99887 56789",
-      email: "mum@shop24hours.com",
-    },
-    {
-      city: "Bangalore",
-      icon: "🌿",
-      count: "2 outlets",
-      addr: "100 Feet Rd, Indiranagar – 560038",
-      phone: "+91 80000 45678",
-      email: "blr@shop24hours.com",
-    },
+    // {
+    //   city: "Mumbai",
+    //   icon: "🌊",
+    //   count: "2 outlets",
+    //   addr: "Linking Rd, Bandra West – 400050",
+    //   phone: "+91 99887 56789",
+    //   email: "mum@shop24hours.com",
+    // },
+    // {
+    //   city: "Bangalore",
+    //   icon: "🌿",
+    //   count: "2 outlets",
+    //   addr: "100 Feet Rd, Indiranagar – 560038",
+    //   phone: "+91 80000 45678",
+    //   email: "blr@shop24hours.com",
+    // },
     {
       city: "Noida",
       icon: "🏗️",
@@ -255,14 +255,14 @@ function Locations() {
       phone: "+91 91234 56789",
       email: "noi@shop24hours.com",
     },
-    {
-      city: "Pune",
-      icon: "🎓",
-      count: "Coming Soon",
-      addr: "FC Road, Deccan – 411004",
-      phone: "—",
-      email: "pune@shop24hours.com",
-    },
+    // {
+    //   city: "Pune",
+    //   icon: "🎓",
+    //   count: "Coming Soon",
+    //   addr: "FC Road, Deccan – 411004",
+    //   phone: "—",
+    //   email: "pune@shop24hours.com",
+    // },
   ];
 
   return (

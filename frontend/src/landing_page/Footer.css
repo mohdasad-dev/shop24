@@ -284,7 +284,7 @@
   
     /* Bottom bar stacks on very narrow screens */
     .s24-footer-bottom-inner { justify-content: center; text-align: center; }
-    .s24-footer-bottom-right { display: none; }
+    .s24-footer-bottom-right { display: block; }
   }
   
   /* ── Small Mobile (< 400px) ── */
@@ -305,3 +305,4 @@
     .s24-footer-contact li { font-size: 12px; }
     .s24-social-link    { width: 34px; height: 34px; font-size: 14px; border-radius: 8px; }
   }
+

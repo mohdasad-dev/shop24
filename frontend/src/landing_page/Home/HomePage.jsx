@@ -31,7 +31,7 @@ function HomePage() {
       <LiveKitchen />
 
       {/* ─── 10. Prime Membership Banner ─── */}
-      <PrimeBanner />
+      {/* <PrimeBanner /> */}
 
       {/* ─── 11. Existing Anytime + Offer + Quality ─── */}
       <Anytime />

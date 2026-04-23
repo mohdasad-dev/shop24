@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "./Footer.css";
+import IdelyzeBadge from "./IdelyzeBadge";
 
 function Footer() {
   const [email, setEmail] = useState("");
@@ -165,8 +166,7 @@ function Footer() {
           <div className="s24-footer-bottom-inner">
             <small>© {new Date().getFullYear()} Shop24Hours. All rights reserved.</small>
             <small className="s24-footer-bottom-right">
-              Powered by 
-              <a href="https://www.idelyze.com/" target="_blank" rel="noopener noreferrer"> Idelyze</a>
+              <IdelyzeBadge />
             </small>
             <small className="s24-footer-bottom-right">
               Made with <span className="s24-heart">♥</span> in India
@@ -174,6 +174,7 @@ function Footer() {
           </div>
         </Container>
       </div>
+
 
     </footer>
   );
