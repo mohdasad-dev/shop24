@@ -165,12 +165,12 @@ function Footer() {
         <Container>
           <div className="s24-footer-bottom-inner">
             <small>© {new Date().getFullYear()} Shop24Hour. All rights reserved.</small>
-            <small className="s24-footer-bottom-right">
+            {/* <small className="s24-footer-bottom-right">
               <IdelyzeBadge />
-            </small>
-            <small className="s24-footer-bottom-right">
+            </small> */}
+            {/* <small className="s24-footer-bottom-right">
               Made with <span className="s24-heart">♥</span> in India
-            </small>
+            </small> */}
           </div>
         </Container>
       </div>

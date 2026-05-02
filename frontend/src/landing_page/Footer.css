@@ -113,6 +113,8 @@
     gap: 8px;
     flex-wrap: wrap;
   }
+
+  
   .s24-email-input {
     flex: 1 1 180px;           /* grow, shrink, min 180px */
     min-width: 0;              /* prevent overflow */
@@ -216,7 +218,7 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
     color: rgba(255,255,255,0.35);
     font-size: 12px;
   }
@@ -306,3 +308,16 @@
     .s24-social-link    { width: 34px; height: 34px; font-size: 14px; border-radius: 8px; }
   }
 
+  @media (max-width: 575px) {
+    .s24-footer-bottom-inner {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 6px;
+    }
+  
+    .s24-footer-bottom-right {
+      margin-top: 4px;
+    }
+  }
