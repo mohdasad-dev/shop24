@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+// import { assets } from '../assets/assets';
+import { assets } from '../../assets/assets';
 
 const DEALS = [
-  { id:1, emoji:"🍔", name:"Smash Burger Combo",   desc:"Burger + Fries + Drink", price:149, original:249, discount:40, tag:"HOT",      tagClass:"fd-tag-hot"      },
-  { id:2, emoji:"🍕", name:"Farm Villa Pizza",      desc:"12 inch, extra cheese",  price:199, original:325, discount:38, tag:"TRENDING", tagClass:"fd-tag-trending" },
-  { id:3, emoji:"🥤", name:"Energy Drink Pack",     desc:"Pack of 4 cans",         price:199, original:280, discount:29, tag:"NEW",      tagClass:"fd-tag-new"      },
-  { id:4, emoji:"🍜", name:"Korean Ramen Bundle",   desc:"Pack of 5 noodles",      price:299, original:450, discount:33, tag:"TRENDING", tagClass:"fd-tag-trending" },
+  { id:1, emoji:"🍔", image:assets.burger,  name:"Smash Burger Combo",   desc:"Burger + Fries + Drink", price:149, original:249, discount:40, tag:"HOT",      tagClass:"fd-tag-hot"      },
+  { id:2, emoji:"🍕", image:assets.Pizza, name:"Farm Villa Pizza",      desc:"12 inch, extra cheese",  price:199, original:325, discount:38, tag:"TRENDING", tagClass:"fd-tag-trending" },
+  { id:3, emoji:"🥤",image:assets.Shake, name:"Energy Drink Pack",     desc:"Pack of 4 cans",         price:199, original:280, discount:29, tag:"NEW",      tagClass:"fd-tag-new"      },
+  { id:4, emoji:"🍜", image:assets.bread, name:"Korean Ramen Bundle",   desc:"Pack of 5 noodles",      price:299, original:450, discount:33, tag:"TRENDING", tagClass:"fd-tag-trending" },
 ];
 
 function useCountdown(targetSeconds) {
@@ -57,7 +59,8 @@ export default function FlashDeals() {
           <div className="fd-card" key={d.id}>
             <div className="fd-card-img">
               <span className="fd-discount-badge">-{d.discount}%</span>
-              <span>{d.emoji}</span>
+              {/* <span>{d.image}</span> */}
+              <img src={d.image} alt={d.name} className="fd-img" />
               <span className={`fd-tag-badge ${d.tagClass}`}>{d.tag}</span>
             </div>
             <div className="fd-card-body">

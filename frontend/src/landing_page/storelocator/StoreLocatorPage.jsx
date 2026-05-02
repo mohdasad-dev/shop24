@@ -14,18 +14,17 @@ function HeroBanner() {
         📍 Open 24 / 7 — Always Near You
       </div>
       <h1>
-        Find Your <em>Nearest</em><br />Shop24Hours
+        Find Your <em>Nearest</em><br />Shop24Hour
       </h1>
       <p>
-        50+ stores across India — hot food, fresh groceries,
+        4 stores across India — hot food, fresh groceries,
         and daily essentials always within reach.
       </p>
       <div className="hero-stats">
         {[
-          ["10+", "Total Stores"],
-          ["2",   "Cities"],
+          ["4", "Total Stores"],
+          ["3",   "Cities"],
           ["24/7","Always Open"],
-          ["₹0",  "Delivery Fee"],
         ].map(([num, lbl]) => (
           <div key={lbl}>
             <div className="hero-stat-num">{num}</div>
@@ -115,12 +114,12 @@ export default function StoreLocatorPage() {
       <HeroBanner />
 
       {/* Search + City tabs */}
-      <SearchFilter
+      {/* <SearchFilter
         query={query}           setQuery={setQuery}
         filter={filter}         setFilter={setFilter}
         activeCity={activeCity} setActiveCity={setActiveCity}
         onLocate={handleLocate}
-      />
+      /> */}
 
       {/* ── Mobile List / Map toggle (hidden on desktop via CSS) ── */}
       <div className="sl-view-toggle">

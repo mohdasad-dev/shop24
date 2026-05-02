@@ -58,7 +58,7 @@ function Navbar() {
               className="s24-logo-img"
             />
             <span className="s24-logo-text">
-              Shop<span>24</span>Hour
+              SHOP<span>24</span>HOUR
             </span>
           </NavLink>
 

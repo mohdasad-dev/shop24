@@ -41,7 +41,7 @@ function ContactCards() {
     {
       icon: "📞",
       label: "PHONE",
-      value: "+91 98103 77747",
+      value: "+91 98103 77247",
       sub: "Mon–Sat, 9AM to 9PM",
       link: "tel:+919810377747",
       linkText: "Call Now →",
@@ -49,7 +49,7 @@ function ContactCards() {
     {
       icon: "✉️",
       label: "EMAIL",
-      value: "hello@shop24hours.com",
+      value: "franchise@shop24hours.com",
       sub: "We reply within 24 hours",
       link: "mailto:hello@shop24hours.com",
       linkText: "Send Email →",
@@ -57,11 +57,11 @@ function ContactCards() {
     {
       icon: "📍",
       label: "HEAD OFFICE",
-      value: "Banjara Hills, Noida",
-      sub: "Road No. 12, Hyd – 500034",
+      value: "Antriksh Forest, Noida",
+      sub: "Antriksh Forest, Prateek Wisteria Noida – 201301",
       link: "#locations",
       linkText: "View Locations →",
-    },
+    }, 
     {
       icon: "🕐",
       label: "SUPPORT HOURS",
@@ -132,8 +132,8 @@ function MiniMap() {
       </div>
       <div className="ct-map-footer">
         <div className="ct-map-addr">
-          Banjara Hills, Noida
-          <span>Road No. 12, Hyd – 500034</span>
+        Antriksh Forest, Noida
+          <span>Antriksh Forest, Prateek Wisteria Noida – 201301</span>
         </div>
         <button className="ct-map-dir" onClick={() => window.open("https://maps.google.com", "_blank")}>
           📍 Directions
@@ -192,8 +192,7 @@ function SocialLinks() {
   const socials = [
     { icon: "f",  label: "Facebook",  color: "#1877f2", href: "https://www.facebook.com/shop24hoursindia" },
     { icon: "in", label: "Instagram", color: "#e1306c", href: "https://www.instagram.com/shop24hours.india/" },
-    { icon: "wa", label: "WhatsApp",  color: "#25d366", href: "https://wa.me/919810377247" },
-    { icon: "yt", label: "YouTube",   color: "#ff0000", href: "#" },
+    { icon: "wb", label: "WhatsApp",  color: "#25d366", href: "https://wa.me/919810377247" },
   ];
   return (
     <div className="ct-social-box">
@@ -226,9 +225,9 @@ function Locations() {
     {
       city: "Delhi",
       icon: "🕌",
-      count: "2 outlets",
-      addr: "Block A, Connaught Place – 110001",
-      phone: "+91 98765 11234",
+      count: "1 outlets",
+      addr: "Sector 3, Rohini, Delhi – 110085",
+      phone: "+91 9310576489",
       email: "del@shop24hours.com",
     },
     // {
@@ -250,19 +249,19 @@ function Locations() {
     {
       city: "Noida",
       icon: "🏗️",
-      count: "1 outlet",
-      addr: "Atta Market, Sector 18 – 201301",
-      phone: "+91 91234 56789",
-      email: "noi@shop24hours.com",
+      count: "2 outlet",
+      addr: "Antriksh Forest, Prateek Wisteria, Noida – 201301",
+      phone: "+91 9810377247",
+      email: "noi@shop24hour.com",
     },
-    // {
-    //   city: "Pune",
-    //   icon: "🎓",
-    //   count: "Coming Soon",
-    //   addr: "FC Road, Deccan – 411004",
-    //   phone: "—",
-    //   email: "pune@shop24hours.com",
-    // },
+    {
+      city: "Pune",
+      icon: "🎓",
+      count: "1 outlet",
+      addr: "Pashan Link Rd, Pashan, Pune – 411045",
+      phone: "+91 9310576489",
+      email: "pune@shop24hour.com",
+    },
   ];
 
   return (

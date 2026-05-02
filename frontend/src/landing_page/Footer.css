@@ -21,7 +21,7 @@
     --ft-white:       #ffffff;
     --ft-muted:       rgba(255, 255, 255, 0.55);
     --ft-border:      rgba(255, 255, 255, 0.08);
-    --ft-font-h:      'Bebas Neue', 'Syne', sans-serif;
+    --ft-font-h:      'Roboto', 'Roboto', sans-serif;
     --ft-font-b:      'DM Sans', sans-serif;
   }
   
@@ -51,7 +51,7 @@
     margin-bottom: 12px;
     line-height: 1;
   }
-  .s24-footer-brand span { color: var(--ft-yellow); }
+  .s24-footer-brand span { color: #16D675; }
   
   .s24-footer-tagline {
     color: var(--ft-muted);

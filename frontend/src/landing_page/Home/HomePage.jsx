@@ -36,7 +36,7 @@ function HomePage() {
       {/* ─── 11. Existing Anytime + Offer + Quality ─── */}
       <Anytime />
       <Offer />
-      <Quality />
+      {/* <Quality /> */}
     </>
   );
 }

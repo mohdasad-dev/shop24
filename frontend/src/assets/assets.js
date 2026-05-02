@@ -16,6 +16,11 @@ import Tea_Coffee_Drinks from './Tea_Coffee_Drinks.png'
 import Baby_Care from './Baby_Care.png'
 import main from './main.png'
 import desk from './desk.png'
+import burger from './burger.png'
+import Shake from './Shake.png'
+import Pizza from './Pizza.png'
+import bread from './bread.png'
+import Logo from './Logo.svg'
 
 export const assets = {
     Atta_Rice_Dal,
@@ -36,4 +41,9 @@ export const assets = {
     Baby_Care,
     main,
     desk,
+    burger,
+    Shake,
+    Pizza,
+    bread,
+    Logo,
 }

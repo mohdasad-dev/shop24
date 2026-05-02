@@ -6,6 +6,11 @@
     font-size: clamp(11px, 1.2vw, 13px);
     flex-wrap: wrap;
     row-gap: 4px;
+    /* background-color: white; */
+  }
+
+  .idelyze-badge a{
+    background-color: whitesmoke;
   }
   
   .idelyze-label {
@@ -47,7 +52,6 @@
   
   /* Hover (desktop only meaningful) */
   .idelyze-link:hover {
-    background: #b5e550;
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(181,229,80,0.25);
   }
@@ -56,10 +60,6 @@
     color: #0f2d1a;
   }
   
-  .idelyze-link:hover .idelyze-dot {
-    background: #0f2d1a;
-    box-shadow: none;
-  }
   
   /* Underline animation */
   .idelyze-link::after {
@@ -179,4 +179,16 @@
   .idelyze-link:focus-visible {
     outline: 2px solid #b5e550;
     outline-offset: 2px;
+  }
+
+  .idelyze-logo {
+    height: 16px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+  
+  /* Optional: align better with text baseline */
+  .idelyze-link {
+    gap: 6px;
   }

@@ -2,12 +2,12 @@ const WHY_ITEMS = [
     {
       icon: "📈",
       title: "Proven Business Model",
-      desc: "6+ years of operations, 50+ successful outlets. You inherit a tested playbook — no guesswork.",
+      desc: "6+ years of operations, 4+ successful outlets. You inherit a tested playbook — no guesswork.",
     },
     {
       icon: "🏷️",
       title: "Established Brand",
-      desc: "Shop24Hours is a recognised name with strong customer loyalty and repeat purchase behaviour.",
+      desc: "Shop24Hour is a recognised name with strong customer loyalty and repeat purchase behaviour.",
     },
     {
       icon: "🛒",
@@ -86,7 +86,7 @@ const WHY_ITEMS = [
       <section className="fq-highlights">
         <div className="fq-section-tag">✦ WHY CHOOSE US</div>
         <h2 className="fq-section-title">
-          Why Partner With <span>Shop24Hours?</span>
+          Why Partner With <span>Shop24Hour?</span>
         </h2>
         <p className="fq-section-sub">
           Join a brand that treats every franchise partner as a co-owner.

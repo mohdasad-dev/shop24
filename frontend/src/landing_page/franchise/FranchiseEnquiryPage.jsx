@@ -11,7 +11,7 @@ import "./franchise.css";
 function FranchiseHero({ onApply }) {
   const BENEFITS = [
     { icon: "📈", title: "₹8L – ₹50L",       sub: "Investment range for all formats" },
-    { icon: "🏪", title: "50+ Outlets",        sub: "Across 8 cities and growing" },
+    { icon: "🏪", title: "4+ Outlets",        sub: "Across 3 cities and growing" },
     { icon: "⏱️", title: "60-Day Launch",      sub: "From sign-off to opening day" },
     { icon: "🛡️", title: "Full Brand Support", sub: "Training, tech, marketing — included" },
   ];
@@ -24,7 +24,7 @@ function FranchiseHero({ onApply }) {
           🤝 BECOME A PARTNER
         </div>
         <h1>
-          Own a <em>Shop24Hours</em><br />
+          Own a <em>Shop24Hour</em><br />
           Franchise Today
         </h1>
         <p className="fq-hero-desc">
@@ -35,8 +35,8 @@ function FranchiseHero({ onApply }) {
         {/* Stats row */}
         <div className="fq-hero-stats">
           {[
-            ["50+", "Active Outlets"],
-            ["8",   "Cities"],
+            ["4", "Active Outlets"],
+            ["3",   "Cities"],
             ["24/7","Operations"],
             ["92%", "Renewal Rate"],
           ].map(([n, l]) => (
@@ -94,7 +94,7 @@ const FAQS = [
     a: "No prior experience is necessary. We provide end-to-end training covering operations, kitchen management, staff handling, and customer service before you launch.",
   },
   {
-    q: "Is the location fixed by Shop24Hours or by me?",
+    q: "Is the location fixed by Shop24Hour or by me?",
     a: "You can suggest a location and our real estate team will evaluate it. Alternatively, we can assist in identifying suitable locations in your target city.",
   },
   {
@@ -106,7 +106,7 @@ const FAQS = [
     a: "Our average from agreement signing to opening day is 45–60 days, depending on the outlet format and readiness of the location.",
   },
   {
-    q: "What royalty percentage does Shop24Hours charge?",
+    q: "What royalty percentage does Shop24Hour charge?",
     a: "Royalty ranges from 4% to 6% of monthly revenue depending on the outlet format. Kiosks pay 6%, Standard 5%, and Flagship stores 4%.",
   },
 ];
@@ -165,7 +165,7 @@ function EnquirySection({ preselectedType }) {
           </h2>
           <p style={{ color: "var(--muted)", fontSize: ".88rem", lineHeight: 1.7, marginBottom: 20 }}>
             Whether you're a first-time entrepreneur or a seasoned business
-            owner, Shop24Hours has a format for you. Our franchise team
+            owner, Shop24Hour has a format for you. Our franchise team
             is here to guide you at every step.
           </p>
 
@@ -177,7 +177,7 @@ function EnquirySection({ preselectedType }) {
             <div style={{ fontSize: "1.6rem", marginBottom: 8 }}>⭐⭐⭐⭐⭐</div>
             <p style={{ fontSize: ".82rem", color: "var(--txt)", lineHeight: 1.7, marginBottom: 10 }}>
               "I launched my Hitech City outlet in just 52 days. The support
-              from the Shop24Hours team was outstanding — from finding the
+              from the Shop24Hour team was outstanding — from finding the
               location to training my staff."
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
@@ -189,7 +189,7 @@ function EnquirySection({ preselectedType }) {
               }}>R</div>
               <div>
                 <div style={{ fontSize: ".8rem", fontWeight: 700, fontFamily: "var(--font-h)" }}>Ravi Shankar</div>
-                <div style={{ fontSize: ".7rem", color: "var(--muted)" }}>Franchise Partner, Hyderabad</div>
+                <div style={{ fontSize: ".7rem", color: "var(--muted)" }}>Franchise Partner, Noida</div>
               </div>
             </div>
           </div>
@@ -198,10 +198,10 @@ function EnquirySection({ preselectedType }) {
           <div className="fq-contact-block">
             <h4>📞 Get in Touch Directly</h4>
             {[
-              { icon: "📞", label: "Phone", val: "+91 98103 77747" },
+              { icon: "📞", label: "Phone", val: "+91 98103 77247" },
               { icon: "✉️", label: "Email", val: "franchise@shop24hours.com" },
-              { icon: "🏢", label: "Office", val: "Banjara Hills, Hyderabad – 500034" },
-              { icon: "⏰", label: "Hours", val: "Mon–Sat, 10AM – 6PM" },
+              { icon: "🏢", label: "Office", val: "Antriksh Forest Prateek Wisteria, Noida – 201301" },
+              { icon: "⏰", label: "Hours", val: "Mon–Sun, 10AM – 10PM" },
             ].map(c => (
               <div className="fq-contact-row" key={c.label}>
                 <div className="fq-contact-icon">{c.icon}</div>

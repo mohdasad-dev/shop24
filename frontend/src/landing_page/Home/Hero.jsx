@@ -37,24 +37,19 @@ function Hero() {
               {/* Top Grid: Square Cards */}
               <div className="row g-3 mb-4 justify-content-center align-items-center">
                 {/* Left Card: Product Icon */}
-                <div className="col-6 col-md-5">
+                
+                <div className="col-6"> {/* was: col-6 col-md-5 */}
                   <div className="glass-card-sq">
-                    <img
-                      src={assets.main}
-                      alt="Produce"
-                      className="img-icon"
-                    />
+                    <img src={assets.main} alt="Produce" className="img-icon" />
                   </div>
                 </div>
 
+
                 {/* Right Card: High-Res Store Image */}
+
                 <div className="col-6">
                   <div className="glass-card-sq overflow-hidden">
-                    <img
-                      src={assets.desk}
-                      alt="Shop24Hours Store Interior"
-                      className="img-full"
-                    />
+                    <img src={assets.desk} alt="Shop24Hours Store Interior" className="img-full" />
                   </div>
                 </div>
               </div>
@@ -62,12 +57,15 @@ function Hero() {
               {/* Bottom List: Category Cards */}
               <div className="category-list-stack d-flex flex-column gap-3 align-items-center">
                 {[
-                  { title: "Snacks & Beverages", desc: "200+ Items in stock", icon: "🍿" },
-                  { title: "Fresh Produce", desc: "Sourced daily, delivered fresh", icon: "🍎" },
-                  { title: "Household Essentials", desc: "Everything you need at home", icon: "🧼" }
+                  { title: "Snacks & Beverages", desc: "200+ Items in stock", icon: "🍿", image: assets.Tea_Coffee_Drinks },
+                  { title: "Fresh Produce", desc: "Sourced daily, delivered fresh", icon: "🍎", image: assets.Dairy_Bread_Eggs },
+                  { title: "Household Essentials", desc: "Everything you need at home", icon: "🧼", image: assets.Atta_Rice_Dal }
                 ].map((item, idx) => (
                   <div key={idx} className="glass-list-card d-flex align-items-center p-3">
-                    <div className="list-icon-box me-3">{item.icon}</div>
+                    <div className="list-icon-box me-3">
+                      {/* {item.icon} */}
+                      <img src={item.image} alt={item.title} className="fd-img" />
+                    </div>
                     <div className="text-start">
                       <h6 className="mb-0 fw-bold">{item.title}</h6>
                       <small className="opacity-50">{item.desc}</small>

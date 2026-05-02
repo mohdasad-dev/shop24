@@ -30,7 +30,7 @@ function Footer() {
             {/* Left — Brand + Socials */}
             <Col xs={12} lg={6}>
               <h2 className="s24-footer-brand">
-                Shop<span>24</span>Hours
+                SHOP<span>24</span>HOUR
               </h2>
               <p className="s24-footer-tagline">
                 Trusted food brands, snacks, beverages, and essentials —
@@ -143,7 +143,7 @@ function Footer() {
               <ul className="s24-footer-list s24-footer-contact">
                 <li>
                   <i className="bi bi-telephone-fill" />
-                  <span>+91 9810377247<br />120-3222012</span>
+                  <span>+91 9810377247</span>
                 </li>
                 <li>
                   <i className="bi bi-envelope-fill" />
@@ -164,7 +164,7 @@ function Footer() {
       <div className="s24-footer-bottom">
         <Container>
           <div className="s24-footer-bottom-inner">
-            <small>© {new Date().getFullYear()} Shop24Hours. All rights reserved.</small>
+            <small>© {new Date().getFullYear()} Shop24Hour. All rights reserved.</small>
             <small className="s24-footer-bottom-right">
               <IdelyzeBadge />
             </small>

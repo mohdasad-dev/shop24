@@ -1,12 +1,4 @@
-/* ════════════════════════════════════════════
-   NAVBAR  —  Shop24Hours
-   Breakpoints:
-     xs   < 400px   (tiny phones)
-     sm   400–599px (phones)
-     md   600–899px (tablets)
-     lg   900–1199px (laptop)
-     xl   ≥ 1200px  (desktop / monitor)
-════════════════════════════════════════════ */
+
 
 /* ── Design Tokens ── */
 :root {
@@ -21,8 +13,8 @@
     /* navbar height desktop */
     --nb-h-sm: 58px;
     /* navbar height mobile */
-    --nb-font-h: 'Bebas Neue', 'Syne', sans-serif;
-    --nb-font-b: 'DM Sans', sans-serif;
+    --nb-font-h: 'Roboto', 'Roboto', sans-serif;
+    --nb-font-b: 'Roboto', sans-serif;
     --nb-shadow: 0 4px 24px rgba(0, 0, 0, 0.22);
     --nb-drawer-w: 300px;
     --nb-transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
@@ -84,7 +76,7 @@
 }
 
 .s24-logo-text span {
-    color: var(--nb-lime);
+    color: #16D675;
 }
 
 /* ── DESKTOP NAV LINKS ── */
